@@ -33,10 +33,16 @@ int main()
 
     iota(vec.begin(), vec.end(), 1); // fill vector with values [1-69]
 
-    cout << "Vector at 49th element before shuffle is: " << vec.at(49) << endl;
+    // cout << "Vector at 49th element before shuffle is: " << vec.at(49) << endl;
 
     // insert line break
     cout << endl;
+
+    // Display greetings once at program start
+    cout << "This program generates random PowerBall lottery numbers. Good luck playing!" << endl;
+
+    // insert line break
+    // cout << endl;
 
     do
     {
@@ -82,7 +88,8 @@ int main()
         // display the #s
         for (int i = 0; i < 5; i++)
         {
-            cout << i << ". White Ball: " << wBallArray[i] << endl;
+            // i + 1 to start listing WhiteBalls at 1 instead of zero
+            cout << i + 1 << ". White Ball: " << wBallArray[i] << endl;
 
         } // end for-loop
 
@@ -92,9 +99,9 @@ int main()
         cout << endl;
 
         // display vector element at(i)
-        cout << "Vector at 49 element after shuffle is: " << vec.at(49) << endl;
+        // cout << "Vector at 49 element after shuffle is: " << vec.at(49) << endl;
 
-        cout << "Vector at 34th: " << vec[34] << endl;
+        // cout << "Vector at 34th: " << vec[34] << endl;
 
         // line break
         cout << endl;
