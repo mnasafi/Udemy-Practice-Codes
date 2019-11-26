@@ -1,2 +1,2 @@
-# ignore compiled files from being added to repo
+# ignore locally compiled files from being added to repo
 *.out
