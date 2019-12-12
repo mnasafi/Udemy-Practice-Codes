@@ -33,6 +33,7 @@ int main()
 
     iota(vec.begin(), vec.end(), 1); // fill vector with values [1-69]
 
+    // for reference purposes only - do not dispaly
     // cout << "Vector at 49th element before shuffle is: " << vec.at(49) << endl;
 
     // insert line break
@@ -53,6 +54,9 @@ int main()
 
         */
 
+	// comes from the <algorithm> library
+	// generates randomized shuffled vector each time
+	// myRandom provies the seed for random shuffle generator - very crucial, otherwise same shuffle sequence each time.    
         random_shuffle(vec.begin(), vec.end(), myRandom);
 
         int mega = 0;
@@ -92,6 +96,9 @@ int main()
             cout << i + 1 << ". White Ball: " << wBallArray[i] << endl;
 
         } // end for-loop
+
+	// insert line break
+	cout << endl;
 
         cout << "Mega is: " << mega << endl;
 
