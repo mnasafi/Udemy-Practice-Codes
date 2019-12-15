@@ -13,6 +13,9 @@
 
 using namespace std;
 
+// using namespace std::cout;
+// using namespace std::endl;
+
 /* seed for random_shuffle generator, otherwise built-in generator 
     creates same shuffle sequence
 */
@@ -26,12 +29,15 @@ int main()
     char promptInput;
     bool restart = false;
 
-    /* initialize random seed:  -- only once HERE */
+    int user_input_wball[5]; // input var. for white balls
+    int user_input_mega;     // input var. for mega number
+
+    /* initialize random seed:  !-- ONLY ONCE HERE --! */
     srand(unsigned(time(0)));
 
     vector<int> vec(69); // vector size 69 of integer type
 
-    iota(vec.begin(), vec.end(), 1); // fill vector with values [1-69]
+    iota(vec.begin(), vec.end(), 1); // fill vector with values [1-69] for white balls
 
     // for reference purposes only - do not dispaly
     // cout << "Vector at 49th element before shuffle is: " << vec.at(49) << endl;
@@ -45,6 +51,33 @@ int main()
     // insert line break
     // cout << endl;
 
+    // prompt user for lotto number input
+    cout << "Enter 5 lottory numbers (1-69): ";
+
+    // store white ball numbers into array
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> user_input_wball[i];
+
+    } // end for
+
+    // mega number prompt and storing into array
+    cout << "Enter Mega Number (1-26): ";
+
+    cin >> user_input_mega;
+
+    if (user_input_mega < 1 || user_input_mega > 26)
+    {
+        cout << "Invalid number entered for Mega number. Must be range 1-26!" << endl;
+        cout << "Try again ... exiting" << endl;
+
+        // exit program
+        return 0;
+
+    } // end if
+
+    // start shuffled powerBall lottery number generation
+
     do
     {
         /*  shuffles same sequence every time. how to randomize it?
@@ -54,9 +87,9 @@ int main()
 
         */
 
-	// comes from the <algorithm> library
-	// generates randomized shuffled vector each time
-	// myRandom provies the seed for random shuffle generator - very crucial, otherwise same shuffle sequence each time.    
+        // comes from the <algorithm> library
+        // generates randomized shuffled vector each time
+        // myRandom provies the seed for random shuffle generator - very crucial, otherwise same shuffle sequence each time.
         random_shuffle(vec.begin(), vec.end(), myRandom);
 
         int mega = 0;
@@ -97,8 +130,8 @@ int main()
 
         } // end for-loop
 
-	// insert line break
-	cout << endl;
+        // insert line break
+        cout << endl;
 
         cout << "Mega is: " << mega << endl;
 
@@ -113,7 +146,14 @@ int main()
         // line break
         cout << endl;
 
-        cout << "Generate again? Y or N: ";
+        // Design algorithm here to check wether you won the lottory or not.
+        // for now, matching mega numbers means won lotto.
+        if (user_input_mega == mega)
+        {
+            cout << "Congratulations! You won the lottery." << endl;
+        }
+
+        std::cout << "Generate again? Y or N: ";
 
         cin >> promptInput;
 
@@ -128,6 +168,9 @@ int main()
         }
 
     } while (restart != false);
+
+    // Design algorithm here to check wether you won the lottory or not.
+    // for now, matching mega numbers means won lotto.
 
     cout << "Finished... bye!" << endl;
 
