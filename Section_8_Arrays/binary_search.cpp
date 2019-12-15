@@ -25,6 +25,9 @@ int main()
 
         if (key == binary_search_array[mid])
         {
+            // line break
+            cout << endl;
+
             cout << "Found at: " << mid << endl;
             cout << "Number searches: " << counter << endl;
 
@@ -44,6 +47,9 @@ int main()
         }
 
     } // end while
+
+    // line break
+    cout << endl;
 
     // key not found
     cout << "Key was not found :(" << endl;
