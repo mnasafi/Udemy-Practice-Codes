@@ -27,7 +27,7 @@ int main()
     // step 2 - remove the pointer reference
     p = nullptr; // to remove the pointer reference.
 
-    // Resizing array.
+    // Resizing array in heap memory
     p = new int[40];
 
     // fill array with 1 ... 39
