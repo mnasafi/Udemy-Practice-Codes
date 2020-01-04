@@ -16,9 +16,15 @@ int main()
 
     cout << "P[3]: " << p[3] << endl;
 
+// 2 steps to deallocate heap memory.
+
     // delete heap memory - deallocate / free up memory
+
+    // step 1 - first delete heap memory 
+    // otherwise will not free heap memory after setting pointer to nullptr.
     delete[] p;
 
+    // step 2 - remove the pointer reference
     p = nullptr; // to remove the pointer reference.
 
     // Resizing array.
@@ -33,6 +39,7 @@ int main()
 
     } // end for
 
+    // store array summation in last index
     p[40] = sum;
 
     cout << "p[40]: " << p[40] << endl;

@@ -12,10 +12,10 @@ int main()
     int *p = &a;
 
     cout << "a: " << a << endl;
-    cout << "&a: " << &a << endl;
+    cout << "&a: " << &a << endl; // returns the memory address. 
     cout << "p: " << p << endl;
     cout << "&p: " << &p << endl;
-    cout << "*p: " << *p << endl; // dereferencing a pointer
+    cout << "*p: " << *p << endl; // dereferencing a pointer - access the data stored at the mem. address pointer points.
 
     return 0;
 
