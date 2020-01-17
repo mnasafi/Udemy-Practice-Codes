@@ -10,14 +10,7 @@ using namespace std;
 template <class T>
 T GetMax(T x, T y)
 {
-    if (x > y)
-    {
-        return x;
-    }
-    else
-    {
-        return y;
-    }
+    return x > y ? x : y; // if x > y, return x otherwise return y.
 
 } // end template
 
@@ -32,6 +25,5 @@ int main()
     cout << "Integer max: " << c << endl;
     cout << "Float max: " << d << endl;
 
-    
     return 0;
 } // end main
